@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Redis Pub/Sub Example</title>
+</head>
+<body>
+<h1>Publish a Message</h1>
+<form action="#" th:action="@{/publish}" method="post">
+  <input type="text" name="message" placeholder="Enter message" required />
+  <button type="submit">Send</button>
+</form>
+
+<div th:if="${message}">
+  <p>Message sent: <span th:text="${message}"></span></p>
+</div>
+
+<a href="/messages" th:href="@{/messages}">View Live Messages</a>
+</body>
+</html>
